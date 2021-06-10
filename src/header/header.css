@@ -1,6 +1,11 @@
 .root {
   flex-grow: 1;
   font-family: "Poppins", sans-serif;
+  
+}
+.headerFix{
+  position: 'sticky';
+  top:0;
 }
 .menuButton {
   margin-right: 2px;
@@ -9,6 +14,7 @@
   flex-grow: 1;
 }
 .heroContent {
+  margin-top: 64px;
   background: url("../Assets/images/hero.jpg") no-repeat;
   background: cover;
   padding: 40px 0 40px;

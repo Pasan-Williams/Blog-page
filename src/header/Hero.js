@@ -4,7 +4,7 @@ import { Container, Grid ,Typography, Button } from "@material-ui/core";
 
 export default function Hero() {
   return (
-    <main>
+    <main position="static">
       <div className="heroContent">
         <Container >
           <Typography

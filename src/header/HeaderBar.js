@@ -14,7 +14,7 @@ import CardGrid from "./CardsGrid"
 export default function HeaderBar() {
   return (
     <div className="root">
-      <AppBar position="static">
+      <AppBar className="headerFix">
         <Toolbar>
           <IconButton
             edge="start"
