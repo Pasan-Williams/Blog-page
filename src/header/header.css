@@ -9,10 +9,33 @@
   flex-grow: 1;
 }
 .heroContent {
-  background: url("../Assets/hero.jpg") no-repeat;
+  background: url("../Assets/images/hero.jpg") no-repeat;
   background: cover;
   padding: 40px 0 40px;
 }
 .heroButtons {
-  margin-top: 4px;
+  margin-top: 18px;
 }
+.heroTitle{
+  font-weight: 400 !important;
+}
+.heroSubTitle{
+  font-weight: 300 !important;
+  color: black;
+  opacity: 0.8;
+}
+.cardGrid {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+.card {
+  height: '100%';
+  display: 'flex';
+  flex-direction: 'column';
+}
+.cardMedia {
+  padding-top: '50%';
+}
+.cardContent {
+  flex-Grow: 1;
+};

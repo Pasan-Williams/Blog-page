@@ -8,24 +8,26 @@ export default function Hero() {
       <div className="heroContent">
         <Container >
           <Typography
-            component="h1"
             variant="h2"
             align="center"
             color="textPrimary"
+            className="heroTitle"
           >
             Read Our Latest Blog Post
           </Typography>
           <Typography
             variant="h5"
             align="center"
+            className="heroSubTitle"
+           
           >
             You can create your own articles here
           </Typography>
           <div className="heroButtons">
             <Grid container justify="center">
               <Grid item>
-                <Button variant="contained" color="primary" className="mt-3">
-                  Read More
+                <Button variant="contained" color="primary">
+                  Read More Blogs
                 </Button>
               </Grid>
             </Grid>

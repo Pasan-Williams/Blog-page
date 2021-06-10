@@ -9,6 +9,7 @@ import {
 import "./Header.css";
 import MenuIcon from "@material-ui/icons/Menu";
 import Hero from "./Hero"
+import CardGrid from "./CardsGrid"
 
 export default function HeaderBar() {
   return (
@@ -30,6 +31,7 @@ export default function HeaderBar() {
         </Toolbar>
       </AppBar>
       <Hero/>
+      <CardGrid/>
     </div>
   );
 }
