@@ -5,10 +5,10 @@ import {
   Typography,
   Button,
   Toolbar,
-  Button,
   IconButton,
-  MenuIcon,
 } from "@material-ui/core";
+import MenuIcon from '@material-ui/icons/Menu';
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function ButtonAppBar() {
+export default function HeaderBar() {
   const classes = useStyles();
 
   return (
@@ -38,9 +38,9 @@ export default function ButtonAppBar() {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" className={classes.title}>
-            News
+            My Blog
           </Typography>
-          <Button color="inherit">Login</Button>
+          <Button color="inherit">Create New</Button>
         </Toolbar>
       </AppBar>
     </div>

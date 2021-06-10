@@ -1,10 +1,9 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import HeaderBar from "./header/HeaderBar";
 
 function App() {
-  return (
-    
-  );
+  return <HeaderBar />;
 }
 
 export default App;
