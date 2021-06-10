@@ -6,7 +6,7 @@ import {
   Toolbar,
   IconButton,
 } from "@material-ui/core";
-import "../header/header.css";
+import "./Header.css";
 import MenuIcon from "@material-ui/icons/Menu";
 import Hero from "./Hero"
 

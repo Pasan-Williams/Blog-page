@@ -1,9 +1,6 @@
-body{
-    font-family: 'Poppins', sans-serif !important;
-}
 .root {
   flex-grow: 1;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 .menuButton {
   margin-right: 2px;
@@ -12,7 +9,8 @@ body{
   flex-grow: 1;
 }
 .heroContent {
-  background-color: "#000";
+  background: url("../Assets/hero.jpg") no-repeat;
+  background: cover;
   padding: 40px 0 40px;
 }
 .heroButtons {

@@ -1,6 +1,6 @@
 import logo from "./logo.svg";
 import "./App.css";
-import HeaderBar from "./header/HeaderBar";
+import HeaderBar from "./Header/HeaderBar";
 
 function App() {
   return <HeaderBar />;

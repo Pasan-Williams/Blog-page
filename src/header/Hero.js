@@ -1,12 +1,12 @@
 import React from "react";
-import "../header/header.css";
+import "./Header.css";
 import { Container, Grid ,Typography, Button } from "@material-ui/core";
 
 export default function Hero() {
   return (
     <main>
       <div className="heroContent">
-        <Container maxWidth="sm">
+        <Container >
           <Typography
             component="h1"
             variant="h2"
