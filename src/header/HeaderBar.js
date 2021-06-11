@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
 import {
   AppBar,
   Typography,
@@ -8,8 +10,8 @@ import {
 } from "@material-ui/core";
 import "./Header.css";
 import MenuIcon from "@material-ui/icons/Menu";
-import Hero from "./Hero"
-import CardGrid from "./CardsGrid"
+import Hero from "./Hero";
+import CardGrid from "./CardsGrid";
 
 export default function HeaderBar() {
   return (
@@ -27,11 +29,13 @@ export default function HeaderBar() {
           <Typography variant="h6" className="title">
             My Blog
           </Typography>
-          <Button variant="contained">Create New</Button>
+          <Link to="/Createform"  style={{ textDecoration: 'none' }}>
+            <Button variant="contained">Create New</Button>
+          </Link>
         </Toolbar>
       </AppBar>
-      <Hero/>
-      <CardGrid/>
+      <Hero />
+      <CardGrid />
     </div>
   );
 }
