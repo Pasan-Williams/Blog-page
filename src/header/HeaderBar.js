@@ -27,7 +27,7 @@ export default function HeaderBar() {
           <Typography variant="h6" className="title">
             My Blog
           </Typography>
-          <Button variant="contained">Create New</Button>
+          <Button variant="contained" >Create New</Button>
         </Toolbar>
       </AppBar>
       <Hero/>
