@@ -34,7 +34,6 @@ export default function Hero() {
           </div>
         </Container>
       </div>
-      ;
     </main>
   );
 }

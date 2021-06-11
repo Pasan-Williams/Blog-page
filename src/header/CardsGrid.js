@@ -8,10 +8,12 @@ import {
   Typography,
   Button,
   Card,
+  CardHeader,
   CardContent,
   CardActions,
   CardMedia,
   IconButton,
+  Avatar,
 } from "@material-ui/core";
 
 export default function CardGrid() {
@@ -22,14 +24,24 @@ export default function CardGrid() {
         {numbers.map((card) => (
           <Grid item key={card} xs={12} sm={6} md={4}>
             <Card className="card">
-              <CardMedia
-                className="cardMediaStyle"
-                Image='../Assets/images/cardImage.jpg'
-                title="Image title"
+              <CardHeader
+                avatar={
+                  <Avatar src="/Assets/images/avatar.png" className="avatarSize"/>
+                }
+                title="Author Name"
+                subheader="Blog category"
               />
+              {/* <CardMedia
+                component="img"
+                alt="Contemplative Reptile"
+                height="100"
+                className="cardMediaStyle"
+                Image="../Assets/images/card-img.jpg"
+                title="Image title"
+              /> */}
               <CardContent className="cardContent">
                 <Typography gutterBottom variant="h5" component="h2">
-                  Heading
+                  Blog Title
                 </Typography>
                 <Typography variant="body2" color="textSecondary" component="p">
                   This is a media card. You can use this section to describe the
@@ -38,11 +50,11 @@ export default function CardGrid() {
               </CardContent>
               <CardActions className="IconStyles">
                 <div>
-                <Button size="small" color="primary">
-                  View
-                </Button>
+                  <Button size="small" color="primary">
+                    View
+                  </Button>
                 </div>
-                <div >
+                <div>
                   <IconButton aria-label="Edit">
                     <EditRoundedIcon fontSize="small" />
                   </IconButton>

@@ -43,8 +43,8 @@
   flex-direction: 'column';
 }
 .cardMediaStyle {
-  height: 100;
-  /* padding-top: '50%'; */
+  height: 100px;
+  padding-top: '50%';
 }
 .IconStyles{
   background-color: #ededed;
@@ -55,3 +55,7 @@
 .cardContent {
   flex-Grow: 1;
 };
+.avatarSize {
+ width: 20px;
+ height: 20px;
+}
