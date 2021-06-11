@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import {
   Container,
@@ -16,6 +16,18 @@ import "./CreateForm.css";
 import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
 
 export default function CreateForm() {
+  const initialInputState = { firstName: "", lastName: "",blogName: "" };
+  const [eachEntry, setEachEntry] = useState(initialInputState);
+  const { firstName, lastName, blogName } = eachEntry;
+
+  const handleInputChange = e => {
+    setEachEntry({...eachEntry, [e.target.name]: e.target.value });
+  };
+  const handleInputSubmit = e => {
+    // updateLeaderBoardArray(eachEntry);
+    console.log("submit");
+  };
+
   return (
     <Container fluid>
       <Paper className="paperStyle">
@@ -42,17 +54,32 @@ export default function CreateForm() {
 
         <Grid container spacing={4}>
           <Grid item xs={12} sm={6}>
-            <TextField required id="firstName" label="First Name" fullWidth />
+            <TextField
+              name="firstName"
+              label="First Name"
+              value={firstName}
+              onChange={handleInputChange}
+             
+              fullWidth
+            />
           </Grid>
           <Grid item xs={12} sm={6}>
-            <TextField required id="lastName" label="Last Name" fullWidth />
+            <TextField
+              name="lastName"
+              label="Last Name"
+              value={lastName}
+              onChange={handleInputChange}
+              fullWidth
+            />
           </Grid>
           <Grid item xs={12}>
             <TextField
               required
               id="blogName"
               name="blogName"
-              label="Blog Name"
+              label="Blog Title"
+              value={blogName}
+              onChange={handleInputChange}
               fullWidth
             />
           </Grid>
@@ -95,7 +122,7 @@ export default function CreateForm() {
         </Grid>
         <br></br>
         <Grid item xs={12}>
-          <Button type="submit" variant="contained" color="primary">
+          <Button type="submit" variant="contained" color="primary" onClick={handleInputSubmit}>
             Submit
           </Button>
         </Grid>
