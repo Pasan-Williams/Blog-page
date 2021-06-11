@@ -6,17 +6,16 @@ import CreateForm from "./Component/CreateForm";
 
 function App() {
   return (
-    <CreateForm />
-    // <BrowserRouter>
-    // <Switch>
-    //   <Route path="/Createform">
-    //     <Createform />
-    //   </Route>
-    //   <Route path="/" >
-    //   <HeaderBar />
-    //   </Route>
-    // </Switch>
-    // </BrowserRouter>
+    <BrowserRouter>
+    <Switch>
+      <Route path="/Createform">
+        <CreateForm />
+      </Route>
+      <Route path="/" >
+      <HeaderBar />
+      </Route>
+    </Switch>
+    </BrowserRouter>
   
   
   );

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import {
   Container,
   Grid,
@@ -35,12 +36,10 @@ export default function CreateForm() {
             />
           </Grid>
         </Grid>
-      
-        <Grid item xs={12} >
-          <div className="textStyle">
-          Blog Category :
-          </div>
-         
+
+        <Grid item xs={12}>
+          <div className="textStyle">Blog Category :</div>
+
           <FormControlLabel
             value="end"
             control={<Radio color="primary" />}
@@ -75,9 +74,11 @@ export default function CreateForm() {
         </Grid>
         <br></br>
         <Grid item xs={12}>
-          <Button type="submit" variant="contained" color="primary">
-            Submit
-          </Button>
+          <Link to="/"  style={{ textDecoration: 'none'}}>
+            <Button type="submit" variant="contained" color="primary">
+              Submit
+            </Button>
+          </Link>
         </Grid>
       </Paper>
     </Container>
