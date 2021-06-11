@@ -9,16 +9,37 @@ import {
   Button,
   Paper,
   Radio,
+  IconButton,
+  Row,
 } from "@material-ui/core";
 import "./CreateForm.css";
+import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
 
 export default function CreateForm() {
   return (
     <Container fluid>
       <Paper className="paperStyle">
-        <Typography variant="h6" gutterBottom>
-          Create New Blog Post
-        </Typography>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            alignItems: "center",
+          }}
+        >
+          <div>
+            <Link to="/" style={{ textDecoration: "none" }}>
+              <IconButton>
+                <ArrowBackIosIcon />
+              </IconButton>
+            </Link>
+          </div>
+          <div>
+            <Typography variant="h6" gutterBottom>
+              Create New Blog Post
+            </Typography>
+          </div>
+        </div>
+
         <Grid container spacing={4}>
           <Grid item xs={12} sm={6}>
             <TextField required id="firstName" label="First Name" fullWidth />
@@ -74,11 +95,9 @@ export default function CreateForm() {
         </Grid>
         <br></br>
         <Grid item xs={12}>
-          <Link to="/"  style={{ textDecoration: 'none'}}>
-            <Button type="submit" variant="contained" color="primary">
-              Submit
-            </Button>
-          </Link>
+          <Button type="submit" variant="contained" color="primary">
+            Submit
+          </Button>
         </Grid>
       </Paper>
     </Container>
