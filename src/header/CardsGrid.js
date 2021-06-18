@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./Header.css";
 import DeleteRoundedIcon from "@material-ui/icons/DeleteRounded";
 import EditRoundedIcon from "@material-ui/icons/EditRounded";
@@ -16,20 +16,33 @@ import {
   Avatar,
 } from "@material-ui/core";
 
-
 export default function CardGrid() {
+  const [person, setPerson] = useState(null);
+
+  useEffect(async () => {
+    const url = "https://api.randomuser.me/";
+    const response = await fetch(url);
+    const data = await response.Json();
+    const [item] = data.results;
+    setPerson(item);
+  
+  }, []);
+
   const numbers = [1, 2, 3, 4, 5, 6];
   return (
     <Container className="cardGrid">
       <Grid container spacing={3}>
-        {numbers.map((card) => (
+      {numbers.map((card) => (
           <Grid item key={card} xs={12} sm={6} md={4}>
             <Card className="card">
               <CardHeader
                 avatar={
-                  <Avatar src="/Assets/images/avatar.png" className="avatarSize"/>
+                  <Avatar
+                    src="/Assets/images/avatar.png"
+                    className="avatarSize"
+                  />
                 }
-                title="Author Name"
+                title="name"
                 subheader="Blog category"
               />
               {/* <CardMedia
@@ -42,7 +55,7 @@ export default function CardGrid() {
               /> */}
               <CardContent className="cardContent">
                 <Typography gutterBottom variant="h5" component="h2">
-                  Blog Title
+                Blog Title
                 </Typography>
                 <Typography variant="body2" color="textSecondary" component="p">
                   This is a media card. You can use this section to describe the
@@ -66,7 +79,7 @@ export default function CardGrid() {
               </CardActions>
             </Card>
           </Grid>
-        ))}
+      ))}
       </Grid>
     </Container>
   );

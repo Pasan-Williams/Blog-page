@@ -12,6 +12,7 @@ import "./Header.css";
 import MenuIcon from "@material-ui/icons/Menu";
 import Hero from "./Hero";
 import CardGrid from "./CardsGrid";
+import { Title } from "@material-ui/icons";
 
 export default function HeaderBar() {
   return (
@@ -27,7 +28,7 @@ export default function HeaderBar() {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" className="title">
-            My Blog
+           My Blog
           </Typography>
           <Link to="/Createform"  style={{ textDecoration: 'none' }}>
             <Button variant="contained">Create New</Button>

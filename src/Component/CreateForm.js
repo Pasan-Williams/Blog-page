@@ -10,26 +10,35 @@ import {
   Paper,
   Radio,
   IconButton,
-  Row,
 } from "@material-ui/core";
 import "./CreateForm.css";
 import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
 
 export default function CreateForm() {
+  let blogArticles = [
+    {
+      firstName:"",
+      lastName:"",
+      blogName:"",
+    }
+  ]
+
   const initialInputState = { firstName: "", lastName: "", blogName: "" };
   const [eachEntry, setEachEntry] = useState(initialInputState);
   const { firstName, lastName, blogName } = eachEntry;
 
+
   const handleInputChange = (e) => {
     setEachEntry({ ...eachEntry, [e.target.name]: e.target.value });
   };
+
   const handleInputSubmit = (e) => {
-    // updateLeaderBoardArray(eachEntry);
-    console.log("submit");
+    e.preventDefault();
+    console.log(eachEntry);
   };
 
   return (
-    <Container fluid>
+    <Container>
       <Paper className="paperStyle">
         <div
           style={{
@@ -125,7 +134,7 @@ export default function CreateForm() {
               type="submit"
               variant="contained"
               color="primary"
-              onClick={handleInputSubmit}
+              onSubmit={handleInputSubmit}
             >
               Submit
             </Button>
@@ -135,3 +144,5 @@ export default function CreateForm() {
     </Container>
   );
 }
+
+
