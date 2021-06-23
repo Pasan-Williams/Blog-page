@@ -36,7 +36,7 @@ export default function HeaderBar() {
         </Toolbar>
       </AppBar>
       <Hero />
-      <CardGrid />
+      <CardGrid title="Auther Name" category="Travel" />
     </div>
   );
 }

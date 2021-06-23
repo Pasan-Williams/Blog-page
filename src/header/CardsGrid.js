@@ -16,23 +16,23 @@ import {
   Avatar,
 } from "@material-ui/core";
 
-export default function CardGrid() {
-  const [person, setPerson] = useState(null);
+export default function CardGrid(props) {
+  // const [person, setPerson] = useState(null);
 
-  useEffect(async () => {
-    const url = "https://api.randomuser.me/";
-    const response = await fetch(url);
-    const data = await response.Json();
-    const [item] = data.results;
-    setPerson(item);
-  
-  }, []);
+  // useEffect(async () => {
+  //   const url = "https://api.randomuser.me/";
+  //   const response = await fetch(url);
+  //   const data = response.data.Json();
+  //   const [item] = data.results;
+  //   console.log("item", item);
+  //   setPerson(item);
+  // }, []);
 
   const numbers = [1, 2, 3, 4, 5, 6];
   return (
     <Container className="cardGrid">
       <Grid container spacing={3}>
-      {numbers.map((card) => (
+        {numbers.map((card) => (
           <Grid item key={card} xs={12} sm={6} md={4}>
             <Card className="card">
               <CardHeader
@@ -42,8 +42,8 @@ export default function CardGrid() {
                     className="avatarSize"
                   />
                 }
-                title="name"
-                subheader="Blog category"
+                title={props.title}
+                subheader={props.category}
               />
               {/* <CardMedia
                 component="img"
@@ -55,7 +55,7 @@ export default function CardGrid() {
               /> */}
               <CardContent className="cardContent">
                 <Typography gutterBottom variant="h5" component="h2">
-                Blog Title
+                  Blog Title
                 </Typography>
                 <Typography variant="body2" color="textSecondary" component="p">
                   This is a media card. You can use this section to describe the
@@ -79,7 +79,7 @@ export default function CardGrid() {
               </CardActions>
             </Card>
           </Grid>
-      ))}
+        ))}
       </Grid>
     </Container>
   );
