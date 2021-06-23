@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./Header.css";
 import DeleteRoundedIcon from "@material-ui/icons/DeleteRounded";
 import EditRoundedIcon from "@material-ui/icons/EditRounded";
@@ -16,8 +16,18 @@ import {
   Avatar,
 } from "@material-ui/core";
 
+export default function CardGrid(props) {
+  // const [person, setPerson] = useState(null);
 
-export default function CardGrid() {
+  // useEffect(async () => {
+  //   const url = "https://api.randomuser.me/";
+  //   const response = await fetch(url);
+  //   const data = response.data.Json();
+  //   const [item] = data.results;
+  //   console.log("item", item);
+  //   setPerson(item);
+  // }, []);
+
   const numbers = [1, 2, 3, 4, 5, 6];
   return (
     <Container className="cardGrid">
@@ -27,10 +37,13 @@ export default function CardGrid() {
             <Card className="card">
               <CardHeader
                 avatar={
-                  <Avatar src="/Assets/images/avatar.png" className="avatarSize"/>
+                  <Avatar
+                    src="/Assets/images/avatar.png"
+                    className="avatarSize"
+                  />
                 }
-                title="Author Name"
-                subheader="Blog category"
+                title={props.title}
+                subheader={props.category}
               />
               {/* <CardMedia
                 component="img"
