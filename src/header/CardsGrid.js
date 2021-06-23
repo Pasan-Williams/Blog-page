@@ -68,11 +68,9 @@ export default function CardGrid() {
 
   return (
     <Container className="cardGrid">
-      <Grid container spacing={3}>
-        <Grid item xs={12} sm={6} md={4}>
-          {cardListComponent()}
-        </Grid>
-      </Grid>
+       <Grid container spacing={3}>
+       {cardListComponent()}     
+       </Grid> 
     </Container>
   );
 }
