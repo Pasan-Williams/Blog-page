@@ -13,7 +13,7 @@ import MenuIcon from "@material-ui/icons/Menu";
 import Hero from "./Hero";
 import CardGrid from "./CardsGrid";
 
-export default function HeaderBar({onAdd}) {
+export default function HeaderBar() {
   return (
     <div className="root">
       <AppBar className="headerFix">
