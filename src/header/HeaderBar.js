@@ -12,9 +12,8 @@ import "./Header.css";
 import MenuIcon from "@material-ui/icons/Menu";
 import Hero from "./Hero";
 import CardGrid from "./CardsGrid";
-import { Title } from "@material-ui/icons";
 
-export default function HeaderBar() {
+export default function HeaderBar({onAdd}) {
   return (
     <div className="root">
       <AppBar className="headerFix">

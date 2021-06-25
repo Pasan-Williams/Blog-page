@@ -3,6 +3,7 @@ import "./Header.css";
 import { Container, Grid ,Typography, Button } from "@material-ui/core";
 
 export default function Hero() {
+
   return (
     <main position="static">
       <div className="heroContent">
@@ -26,9 +27,9 @@ export default function Hero() {
           <div className="heroButtons">
             <Grid container justify="center">
               <Grid item>
-                <Button variant="contained" color="primary">
+                {/* <Button variant="contained" color="primary" onClick={onAdd}>
                   Read More Blogs
-                </Button>
+                </Button> */}
               </Grid>
             </Grid>
           </div>

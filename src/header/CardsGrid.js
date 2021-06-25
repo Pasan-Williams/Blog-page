@@ -1,12 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./Header.css";
 
-import { Container, Grid } from "@material-ui/core";
+import { Container, Grid, Button } from "@material-ui/core";
 import GridItem from "./CardItem";
 
 export default function CardGrid() {
-  const cardList = [
+  const [cardList, setCardlist] = useState([
     {
+      id: 1,
       name: {
         title: "Miss",
         first: "Teresa",
@@ -23,6 +24,7 @@ export default function CardGrid() {
       },
     },
     {
+      id: 2,
       name: {
         title: "Mrs",
         first: "Abigail",
@@ -38,7 +40,7 @@ export default function CardGrid() {
         },
       },
     },
-  ];
+  ]);
 
   // const [person, setPerson] = useState(null);
 
@@ -54,23 +56,50 @@ export default function CardGrid() {
   const cardListComponent = () => {
     return cardList.map((aName) => {
       return (
-          <GridItem
-            authorName={
-              aName.name.title + " " + aName.name.first + " " + aName.name.last
-            }
-            category={aName.location.street.number}
-            blogTitle={aName.location.street.name}
-            avatar={aName.picture.medium}
-          />
+        <GridItem
+          key={aName.id}
+          authorName={
+            aName.name.title + " " + aName.name.first + " " + aName.name.last
+          }
+          category={aName.location.street.number}
+          blogTitle={aName.location.street.name}
+          avatar={aName.picture.medium}
+        />
       );
     });
   };
 
+  const addBlogMore = () => {
+    const newCard = {
+      id: 3,
+      name: {
+        title: "Mr",
+        first: "Lucas",
+        last: "Freeman",
+      },
+      picture: {
+        medium: "https://randomuser.me/api/portraits/med/men/99.jpg",
+      },
+      location: {
+        street: {
+          number: 9494,
+          name: "North Street",
+        },
+      },
+    };
+    setCardlist ([...cardList, newCard]);
+  };
+
   return (
     <Container className="cardGrid">
-       <Grid container spacing={3}>
-       {cardListComponent()}     
-       </Grid> 
+      <Grid item className="bottomMargin">
+        <Button variant="contained" color="primary" onClick={addBlogMore}>
+          Read More Blogs
+        </Button>
+      </Grid>
+      <Grid container spacing={3}>
+        {cardListComponent()}
+      </Grid>
     </Container>
   );
 }
