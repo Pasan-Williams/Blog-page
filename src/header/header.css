@@ -3,6 +3,10 @@
   font-family: "Poppins", sans-serif;
   
 }
+.appbar{
+    position: 'relative',
+
+}
 .headerFix{
   position: 'sticky';
   top:0;
