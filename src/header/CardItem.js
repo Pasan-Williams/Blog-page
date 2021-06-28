@@ -23,14 +23,6 @@ export default function CardItem(props) {
             title={props.authorName}
             subheader={props.category}
           />
-          {/* <CardMedia
-                component="img"
-                alt="Contemplative Reptile"
-                height="100"
-                className="cardMediaStyle"
-                Image="../Assets/images/card-img.jpg"
-                title="Image title"
-              /> */}
           <CardContent className="cardContent">
             <Typography gutterBottom variant="h5" component="h2">
               {props.blogTitle}

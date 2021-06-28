@@ -1,6 +1,7 @@
 import React from "react";
 import "./Header.css";
 import { Container, Grid ,Typography, Button } from "@material-ui/core";
+// import CardItem from "./CardItem";
 
 export default function Hero() {
 
@@ -27,7 +28,7 @@ export default function Hero() {
           <div className="heroButtons">
             <Grid container justify="center">
               <Grid item>
-                {/* <Button variant="contained" color="primary" onClick={onAdd}>
+                {/* <Button variant="contained" color="primary" onClick={changeState}>
                   Read More Blogs
                 </Button> */}
               </Grid>

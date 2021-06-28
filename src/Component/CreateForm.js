@@ -47,7 +47,7 @@ export default function CreateForm() {
             alignItems: "center",
           }}
         >
-          <div>
+          {/* <div>
             <Link to="/" style={{ textDecoration: "none" }}>
               <IconButton>
                 <ArrowBackIosIcon />
@@ -58,7 +58,7 @@ export default function CreateForm() {
             <Typography variant="h6" gutterBottom>
               Create New Blog Post
             </Typography>
-          </div>
+          </div> */}
         </div>
         <form onSubmit={handleInputSubmit}>
           <Grid container spacing={4}>
