@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import "./Header.css";
 
 import { Container, Grid, Button } from "@material-ui/core";
 import GridItem from "./CardItem";
 
 export default function CardGrid() {
+  const [loadData, setLoadData] = useState(new Date);
   const [cardList, setCardlist] = useState([
     {
       id: 1,
@@ -42,16 +43,16 @@ export default function CardGrid() {
     },
   ]);
 
-  // const [person, setPerson] = useState(null);
 
-  // useEffect(async () => {
-  //   const url = "https://api.randomuser.me/";
-  //   const response = await fetch(url);
-  //   const data = response.data.Json();
-  //   const [item] = data.results;
-  //   console.log("item", item);
-  //   setPerson(item);
-  // }, []);
+  useEffect(() => {
+  fetch("https://api.randomuser.me/")
+  .then((response) => {
+    return response.json();
+  }).then((responseData) => {
+    setCardlist((cardList) => [...cardList,responseData.results[0]]);
+  });
+ 
+  },[loadData]);
 
   const cardListComponent = () => {
     return cardList.map((aName) => {
@@ -70,24 +71,7 @@ export default function CardGrid() {
   };
 
   const addBlogMore = () => {
-    const newCard = {
-      id: 3,
-      name: {
-        title: "Mr",
-        first: "Lucas",
-        last: "Freeman",
-      },
-      picture: {
-        medium: "https://randomuser.me/api/portraits/med/men/99.jpg",
-      },
-      location: {
-        street: {
-          number: 9494,
-          name: "North Street",
-        },
-      },
-    };
-    setCardlist ([...cardList, newCard]);
+    setLoadData(new Date());
   };
 
   return (
